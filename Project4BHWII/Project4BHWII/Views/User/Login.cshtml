@@ -1,0 +1,32 @@
+﻿@model  Project4BHWII.Models.User
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    <table>
+        <thead>
+            <tr>
+                <td colspan="2"> Login</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Html.LabelFor(u => u.Username, "Username:")</td>
+                <td>@Html.TextBoxFor(u => u.Username, new { required = "required" })</td>
+            </tr>
+            <tr>
+                <td>@Html.LabelFor(u => u.Password, "Passwort:")</td>
+                <td>@Html.TextBoxFor(u => u.Password, new { required = "required" })</td>
+            </tr>
+        </tbody>
+        <tfoot>
+
+        </tfoot>
+    </table>
+}
+

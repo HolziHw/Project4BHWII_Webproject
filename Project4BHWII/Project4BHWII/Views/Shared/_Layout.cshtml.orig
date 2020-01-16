@@ -9,32 +9,33 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="jumbotron text-center">
-        <h1>Realtime Battlefield Games Forum</h1>
-        <p>It's for the Players</p>
+    
+    <div id="container">
+        <header>
+            @Html.Partial("Header")
+        </header>
+        <main>
+            <nav>
+                @Html.Parial("Navigation")
+            </nav>
+            <content>
+                @RenderBody()
+            </content>
+
+        </main>
     </div>
 
-    <nav class="navbar-expand-sm bg-dark navbar-fixed-top">
-        <a class="navbar-brand" href="#">
-            Logo
-        </a>
-        <ul class="navbar-nav">
-            <li class="nav-item">
-                <a class="navbar-link" href="#">Link todo</a>
-            </li>
-            <li class="nav-item dropdown">
 
-            </li>
+    
 
-        </ul>
-    </nav>
+    
 
 <<<<<<< HEAD
-    <p>Hoi Holzi 33333</p>
+   
+   
 =======
-    <p>Hoi aksfd</p>
->>>>>>> b4b5b56cc502aab043f66ebd560ff1bc01aca068
     @RenderBody()
+>>>>>>> 6a3e6c5a83d7cda160bd08ce2387f9a646199d63
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
