@@ -29,6 +29,11 @@
         </ul>
     </nav>
 
+<<<<<<< HEAD
+    <p>Hoi aksfdajsfgiagfuihadi</p>
+=======
+    <p>Chris woa do a Wurzn unpflonzn</p>
+>>>>>>> a9fd5ffe58ae735eba91fd5230191c7fd11eaac2
     @RenderBody()
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
