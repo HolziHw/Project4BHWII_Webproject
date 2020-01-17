@@ -13,5 +13,20 @@ namespace Project4BHWII.Controllers
         {
             return View();
         }
+
+        public ActionResult HeartsofIron()
+        {
+            return View();
+        }
+
+        public ActionResult EuropaUniversalis()
+        {
+            return View();
+        }
+
+        public ActionResult CrusaiderKings()
+        {
+            return View();
+        }
     }
 }

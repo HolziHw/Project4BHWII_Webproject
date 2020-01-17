@@ -12,7 +12,10 @@ namespace Project4BHWII.Controllers
         {
             return View();
         }
-        
 
+        public ActionResult Starcraft()
+        {
+            return View();
+        }
     }
 }
