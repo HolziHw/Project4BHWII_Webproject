@@ -8,4 +8,10 @@
 #content{
     background-color: #423f3f;
 }
+
+a:hover{
+    text-decoration-color:none;
+    color: black;
+    margin: 0;
+}
  
