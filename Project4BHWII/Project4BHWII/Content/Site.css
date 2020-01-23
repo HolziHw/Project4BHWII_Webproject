@@ -23,3 +23,20 @@ a:hover{
 .ContentSites {
     background-color: #626262;
 }
+
+table{
+    border: 1px solid black;
+}
+
+tr {
+    border: 1px solid black;
+    background-color: #626262;
+}
+
+td {
+    border: 1px solid black;
+}
+
+body {
+    background-color: #626262;
+}
