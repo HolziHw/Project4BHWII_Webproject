@@ -9,7 +9,6 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    
     <div id="container">
         <div id="Header">
             <header>
@@ -24,6 +23,9 @@
                 @RenderBody()
             </content>
         </main>
+        <footer>
+            @Html.Partial("Footer");
+        </footer>
     </div>
    
     @Scripts.Render("~/bundles/jquery")
