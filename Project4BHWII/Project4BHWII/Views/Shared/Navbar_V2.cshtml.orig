@@ -27,6 +27,20 @@
             </li>
         </ul>
         <ul class="navbar-nav ml-auto">
+<<<<<<< HEAD
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                User Login/Registration
+            </a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item">@Html.ActionLink("Login", "Login", "User")</a>    <br />
+                <a class="dropdown-item">@Html.ActionLink("Registration", "Registration", "User")</a>    <br />
+            </div>
+        </li>
+    </ul>
+        
+
+=======
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                     <span class="glyphicon glyphicon-user" aria-hidden="false"></span>User Login/Registration
@@ -37,6 +51,7 @@
                 </div>
             </li>
         </ul>
+>>>>>>> 6af772277d348faf2c3345a7462354d0b9482570
 
     </nav>
 

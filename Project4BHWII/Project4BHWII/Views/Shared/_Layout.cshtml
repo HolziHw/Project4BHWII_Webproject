@@ -1,12 +1,13 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meine ASP.NET-Anwendung</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/bootstrap")
 </head>
 <body>
     <div id="container">
@@ -19,7 +20,7 @@
             <nav>
                 @Html.Partial("Navbar_V2")
             </nav>
-            <content id="content" class="ContentSites">
+            <content>
                 @RenderBody()
             </content>
         </main>
@@ -29,7 +30,6 @@
     </div>
    
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 
     
