@@ -10,6 +10,7 @@ namespace Project4BHWII.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.FileName = "/Media/Pictures/Eu4banner_2.jfif";
             return View();
         }
 

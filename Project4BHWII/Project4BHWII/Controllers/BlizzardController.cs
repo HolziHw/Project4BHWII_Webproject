@@ -10,6 +10,7 @@ namespace Project4BHWII.Controllers
     {
         public ActionResult Index()
         {
+
             return View();
         }
 

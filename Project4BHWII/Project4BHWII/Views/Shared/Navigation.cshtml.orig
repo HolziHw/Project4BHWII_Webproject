@@ -1,0 +1,48 @@
+﻿
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img scr="../../Media/Pictures/paradoxicon.png">
+        </a>
+        <ul class="nav nav-tabs">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Paradox
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item">@Html.ActionLink("Hearts of Iron 4", "HeartsofIron", "Paradox")</a>    <br />
+                    <a class="dropdown-item">@Html.ActionLink("Europa Universalis 4", "EuropaUniversalis", "Paradox")</a>    <br />
+                    <a class="dropdown-item">@Html.ActionLink("Crusaider Kings", "CrusaiderKings", "Paradox")</a>    <br />
+                </div>
+            </li>
+
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    Blizzard
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item">@Html.ActionLink("Starcraft 2", "Starcraft", "Blizzard")</a>    <br />
+                </div>
+            </li>
+        </ul>
+        <ul>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    User Login/Registration
+                </a>
+                <div class="dropdown-menu">
+                    <a class="dropdown-item">@Html.ActionLink("Login", "Login", "User")</a>    <br />
+                    <a class="dropdown-item">@Html.ActionLink("Registration", "Registration", "User")</a>    <br />
+                </div>
+<<<<<<< HEAD
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up @Html.ActionLink("Registration", "Registration", "User")</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login @Html.ActionLink("Login", "Login", "User")</a></li>
+=======
+>>>>>>> b607e0be5a89bd553d6ec794e033214c796f6a4e
+        </ul>
+    </nav>
+
+

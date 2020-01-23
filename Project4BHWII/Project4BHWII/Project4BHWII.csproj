@@ -143,10 +143,14 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Media\Pictures\BlizzardIcon.jpg" />
+    <Content Include="Media\Pictures\CrusaiderKings2Banner.jfif" />
     <Content Include="Media\Pictures\Eu4banner.jfif" />
     <Content Include="Media\Pictures\Eu4banner_2.jfif" />
+    <Content Include="Media\Pictures\EUbanner_Steam.png" />
     <Content Include="Media\Pictures\Hoi4Banner.png" />
     <Content Include="Media\Pictures\paradoxicon.png" />
+    <Content Include="Media\Pictures\Starcraft2_banner.jpg" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -282,6 +286,7 @@
     <Content Include="Views\Paradox\CrusaiderKings.cshtml" />
     <Content Include="Views\Paradox\EuropaUniversalis.cshtml" />
     <Content Include="Views\Blizzard\Starcraft.cshtml" />
+    <Content Include="Views\Shared\Navbar_V2.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
