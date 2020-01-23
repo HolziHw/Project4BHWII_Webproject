@@ -1,0 +1,24 @@
+﻿#HeaderPic{
+    background-image: url(../../Media/Pictures/Eu4banner_2.jfif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0px;
+    height: 200px;
+}
+
+#content{
+    background-color: #423f3f;
+}
+
+<<<<<<< HEAD
+a:hover{
+    text-decoration-color:none;
+    color: black;
+    margin: 0;
+}
+ 
+=======
+#Header{
+    height: 200px;
+}
+>>>>>>> 3ce0452864ca41f13c6a3d19cd4d0cad9d2d689e

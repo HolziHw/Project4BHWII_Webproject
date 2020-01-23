@@ -23,6 +23,8 @@
                     <a class="dropdown-item">@Html.ActionLink("Starcraft 2", "Starcraft", "Blizzard")</a>    <br />
                 </div>
             </li>
+        </ul>
+        <ul>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                     User Login/Registration
@@ -31,7 +33,11 @@
                     <a class="dropdown-item">@Html.ActionLink("Login", "Login", "User")</a>    <br />
                     <a class="dropdown-item">@Html.ActionLink("Registration", "Registration", "User")</a>    <br />
                 </div>
-               
+
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up @Html.ActionLink("Registration", "Registration", "User")</a></li>
+            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login @Html.ActionLink("Login", "Login", "User")</a></li>
         </ul>
     </nav>
 
