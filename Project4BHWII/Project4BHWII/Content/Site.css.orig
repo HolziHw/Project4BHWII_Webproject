@@ -6,19 +6,74 @@
     height: 200px;
 }
 
-#content{
-    background-color: #423f3f;
+#Header{
+    height: 200px;
 }
 
-<<<<<<< HEAD
 a:hover{
     text-decoration-color:none;
     color: black;
     margin: 0;
 }
- 
-=======
-#Header{
-    height: 200px;
+
+.ContentSites {
+    background-color: #626262;
 }
->>>>>>> 3ce0452864ca41f13c6a3d19cd4d0cad9d2d689e
+
+table{
+    border: 1px solid black;
+}
+
+tr {
+    border: 1px solid black;
+    background-color: #626262;
+}
+
+td {
+    border: 1px solid black;
+}
+
+body {
+    background-color: #626262;
+}
+
+.footer{
+    position:fixed;
+    left:0;
+    bottom:0;
+    width:100%;
+    height:50px;
+    background-color:#343A40;
+    color:#808080;
+}
+
+#Icon{
+
+    margin-right: 4px;
+    margin-bottom: 2.5px;
+    height: 20px;
+    width: 20px;
+
+<<<<<<< HEAD
+}
+=======
+}
+
+
+.eu4head{
+    text-align:center;
+    height:20%;
+    width:80%;
+    left:10%;
+    right:10%;
+}
+
+
+
+
+
+
+
+
+
+>>>>>>> 19f93ae2d25e53a68ca4922d15482677794b3c84
