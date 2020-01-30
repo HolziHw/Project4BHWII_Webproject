@@ -18,6 +18,7 @@ namespace Project4BHWII.Controllers
         public ActionResult Login()
         {
             return View(new User());
+            Session["UserData"] = 
         }
 
         public ActionResult Registration()

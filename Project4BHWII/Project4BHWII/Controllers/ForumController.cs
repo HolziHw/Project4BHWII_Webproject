@@ -8,7 +8,6 @@ namespace Project4BHWII.Controllers
 {
     public class ForumController : Controller
     {
-        // GET: Forum
         public ActionResult Index()
         {
             return View();
