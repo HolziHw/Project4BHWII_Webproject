@@ -60,7 +60,12 @@ body {
 .eu4head {
     margin-left: auto;
     margin-right: auto;
-   
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+h1 {
+    font-family: 'Lora', serif;
 }
 
 
