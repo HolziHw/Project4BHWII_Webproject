@@ -11,51 +11,52 @@
     ViewBag.Title = "newEntry";
 }
 
-<h2>Login</h2>
+<h2>neuer Eintrag</h2>
 
 @using (Html.BeginForm())
-{
-    <table align="center" class="ForumsEntry">
-        <thead>
-            <tr>
-                <td colspan="2"> neuer Post</td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-            <td>
-                Username:
-            </td>
+{  
+    
+<table align="center" class="ForumsEntry">
+    <thead>
+        <tr id="EntryHead">
+            <td colspan="2"> neuer Post</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+        <td>
+            Username:
+        </td>
 
-                @{
-                    User user = Session["User"] as User;
-                    if (user != null)
-                    {
-                        <td>
-                            @user.Username
-                        </td>
-                    }
-                    else
-                    {
-                        <td>
-                            GastUser
-                        </td>
-                    }
+            @{
+                User user = Session["User"] as User;
+                if (user != null)
+                {
+                    <td>
+                        @user.Username
+                    </td>
                 }
+                else
+                {
+                    <td>
+                        GastUser
+                    </td>
+                }
+            }
+        </tr>
+        <div class="ForumsEntry">
+            <tr>
+                <td colspan="2">@Html.TextAreaFor(u => u.Entry, new { required = "required" })</td>
             </tr>
-            <div class="ForumsEntry">
-                <tr>
-                    <td colspan="2">@Html.TextAreaFor(u => u.Entry, new { required = "required" })</td>
-                </tr>
-            </div>
+        </div>
         <td colspan="2" , style="text-align: center">
             <input type="submit" value="Posten" id="btnSubmit" />
             <input type="reset" value="abbrechen" id="btnReset" />
         </td>
-        </tbody>
-        <tfoot>
-        </tfoot>
-    </table>
+    </tbody>
+    <tfoot>
+    </tfoot>
+</table>
 }
 
 
