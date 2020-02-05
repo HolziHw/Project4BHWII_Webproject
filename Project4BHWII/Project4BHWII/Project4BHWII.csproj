@@ -295,11 +295,10 @@
     <Content Include="Views\Blizzard\Starcraft.cshtml" />
     <Content Include="Views\Shared\Navbar_V2.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
-    <Content Include="Views\Home\newEntry.cshtml" />
+    <Content Include="Views\Forum\newEntry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Forum\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

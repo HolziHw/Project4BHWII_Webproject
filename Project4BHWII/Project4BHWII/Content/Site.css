@@ -68,7 +68,14 @@ h1 {
     font-family: 'Lora', serif;
 }
 
+.ForumsEntry{
+    min-width: 50%;
+}
 
+.ForumsEntry textarea {
+    min-width: 99%;
+    min-height: 200px;
+}
 
 
 

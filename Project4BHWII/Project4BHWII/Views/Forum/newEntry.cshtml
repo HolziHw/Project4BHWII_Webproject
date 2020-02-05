@@ -1,0 +1,63 @@
+﻿<script>
+    document.getElementById("HeaderText").innerHTML = "";
+    document.getElementById("HeaderSubTitle").innerHTML = "";
+    document.getElementById("HeaderPic").style.backgroundImage = "url('../../Media/Pictures/Hoi4Banner.png')";
+</script>
+
+
+@model  Project4BHWII.Models.newEntry
+@using Project4BHWII.Models
+@{
+    ViewBag.Title = "newEntry";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm())
+{
+    <table align="center" class="ForumsEntry">
+        <thead>
+            <tr>
+                <td colspan="2"> neuer Post</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <td>
+                Username:
+            </td>
+
+                @{
+                    User user = Session["User"] as User;
+                    if (user != null)
+                    {
+                        <td>
+                            @user.Username
+                        </td>
+                    }
+                    else
+                    {
+                        <td>
+                            GastUser
+                        </td>
+                    }
+                }
+            </tr>
+            <div class="ForumsEntry">
+                <tr>
+                    <td colspan="2">@Html.TextAreaFor(u => u.Entry, new { required = "required" })</td>
+                </tr>
+            </div>
+        <td colspan="2" , style="text-align: center">
+            <input type="submit" value="Posten" id="btnSubmit" />
+            <input type="reset" value="abbrechen" id="btnReset" />
+        </td>
+        </tbody>
+        <tfoot>
+        </tfoot>
+    </table>
+}
+
+
+
+

@@ -12,5 +12,10 @@ namespace Project4BHWII.Controllers
         {
             return View();
         }
+
+        public ActionResult newEntry()
+        {
+            return View();
+        }
     }
 }
