@@ -65,7 +65,14 @@ body {
     right:10%;
 }
 
+.ForumsEntry{
+    min-width: 50%;
+}
 
+.ForumsEntry textarea {
+    min-width: 99%;
+    min-height: 200px;
+}
 
 
 

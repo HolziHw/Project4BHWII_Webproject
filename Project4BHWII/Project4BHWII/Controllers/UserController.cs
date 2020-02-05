@@ -10,15 +10,20 @@ namespace Project4BHWII.Controllers
     public class UserController : Controller
     {
         // GET: User
-        public ActionResult Index()
-        {
-            return View();
-        }
-
+        [HttpGet]
         public ActionResult Login()
         {
             return View(new User());
-            Session["UserData"] = 
+        }
+
+
+        [HttpPost]
+        public ActionResult Login(User UserDaten)
+        {
+            UserDaten.Firstname = "Holzi";
+            UserDaten.Username = "Holzi";
+            Session["User"] = UserDaten;
+            return RedirectToAction("Index","Home");
         }
 
         public ActionResult Registration()
