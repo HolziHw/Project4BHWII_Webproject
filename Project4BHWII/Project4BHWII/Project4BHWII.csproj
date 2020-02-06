@@ -147,6 +147,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Media\Pictures\512px-euiv-world-geography-1.jpg" />
+    <Content Include="Media\Pictures\Anno1800Wallpaper.jpg" />
     <Content Include="Media\Pictures\BlizzardIcon.jpg" />
     <Content Include="Media\Pictures\Blog_Holy-Fury.jpg" />
     <Content Include="Media\Pictures\cruKing.png" />
