@@ -64,7 +64,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 
-.h1Schrift {
+h1,h2,h3,h4,h5,h6,p {
     font-family: 'Lora', serif;
 }
 
@@ -80,19 +80,12 @@ body {
     min-height: 200px;
 }
 
-<<<<<<< HEAD
 #EntryHead{
     background-color: black;
     color:white;
 }
-=======
 
-
-
-
-
-
-
+<<<<<<< HEAD
 .gallery {
     -webkit-column-count: 3;
     -moz-column-count: 3;
@@ -102,38 +95,70 @@ body {
     column-width: 33%;
 }
 
-    .gallery .pics {
-        -webkit-transition: all 350ms ease;
-        transition: all 350ms ease;
-    }
-
-    .gallery .animation {
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-    }
-
-@media (max-width: 450px) {
-    .gallery {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-        -webkit-column-width: 100%;
-        -moz-column-width: 100%;
-        column-width: 100%;
-    }
+.gallery .pics {
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease;
 }
 
-@media (max-width: 400px) {
-    .btn.filter {
-        padding-left: 1.1rem;
-        padding-right: 1.1rem;
-    }
+.gallery .animation {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+=======
+
+
+
+
+
+
+.gallerycontainer {
+    position: relative;
+    margin-left:20%;
+    margin-right:auto;
+
+    /*Add a height attribute and set to largest image's height to prevent overlaying*/
 }
 
+.thumbnail img {
+    border: 1px solid white;
+    margin: 0 5px 5px 0;
+}
 
+.thumbnail:hover {
+    background-color: transparent;
+>>>>>>> 42c0b0ff7f612f1c0dbb3d0e256dbfa26c7ecef8
+}
 
+    .thumbnail:hover img {
+        border: 1px solid blue;
+    }
 
+.thumbnail span { /*CSS for enlarged image*/
+    position: absolute;
+    background-color: lightgray;
+    padding: 5px;
+    left: -1000px;
+    border: 1px dashed gray;
+    visibility: hidden;
+    color: black;
+    text-decoration: none;
+}
 
+    .thumbnail span img { /*CSS for enlarged image*/
+        border-width: 0;
+        padding: 2px;
+    }
 
->>>>>>> 51a1f56abc4bd98d2ec075a69b20a90ef2822344
+.thumbnail:hover span { /*CSS for enlarged image*/
+    visibility: visible;
+    top: 0;
+    left: 350px; /*position where enlarged image should offset horizontally */
+    z-index: 50;
+}
+
+table.LoginCss{
+    border: solid;
+    border-width: 3px;
+    border-radius:10px;
+    border-color: black;
+}
