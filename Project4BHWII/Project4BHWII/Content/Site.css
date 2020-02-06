@@ -83,11 +83,12 @@ input:focus {
     }
 
 #HeaderPic{
-    background-image: url(../../Media/Pictures/Eu4banner_2.jfif);
+    background-image: url(../../Media/Pictures/Eu4_banner2.jfif);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
     height: 200px;
+    width: 100%;
 }
 
 #Header{
