@@ -64,7 +64,7 @@ body {
 
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,p {
     font-family: 'Lora', serif;
 }
 
@@ -91,42 +91,48 @@ h1,h2,h3,h4,h5,h6 {
 
 
 
-.gallery {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-width: 33%;
-    -moz-column-width: 33%;
-    column-width: 33%;
+.gallerycontainer {
+    position: relative;
+    margin-left:20%;
+    margin-right:auto;
+
+    /*Add a height attribute and set to largest image's height to prevent overlaying*/
 }
 
-    .gallery .pics {
-        -webkit-transition: all 350ms ease;
-        transition: all 350ms ease;
-    }
-
-    .gallery .animation {
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-    }
-
-@media (max-width: 450px) {
-    .gallery {
-        -webkit-column-count: 1;
-        -moz-column-count: 1;
-        column-count: 1;
-        -webkit-column-width: 100%;
-        -moz-column-width: 100%;
-        column-width: 100%;
-    }
+.thumbnail img {
+    border: 1px solid white;
+    margin: 0 5px 5px 0;
 }
 
-@media (max-width: 400px) {
-    .btn.filter {
-        padding-left: 1.1rem;
-        padding-right: 1.1rem;
+.thumbnail:hover {
+    background-color: transparent;
+}
+
+    .thumbnail:hover img {
+        border: 1px solid blue;
     }
+
+.thumbnail span { /*CSS for enlarged image*/
+    position: absolute;
+    background-color: lightgray;
+    padding: 5px;
+    left: -1000px;
+    border: 1px dashed gray;
+    visibility: hidden;
+    color: black;
+    text-decoration: none;
+}
+
+    .thumbnail span img { /*CSS for enlarged image*/
+        border-width: 0;
+        padding: 2px;
+    }
+
+.thumbnail:hover span { /*CSS for enlarged image*/
+    visibility: visible;
+    top: 0;
+    left: 350px; /*position where enlarged image should offset horizontally */
+    z-index: 50;
 }
 
 
