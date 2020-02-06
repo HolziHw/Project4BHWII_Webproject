@@ -54,26 +54,86 @@ body {
     height: 20px;
     width: 20px;
 
+}
+
+
+.eu4head {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+
+.h1Schrift {
+    font-family: 'Lora', serif;
+}
+
+.ForumsEntry{
+    min-width: 50%;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 5px;
+}
+
+.ForumsEntry textarea {
+    min-width: 99%;
+    min-height: 200px;
+}
+
 <<<<<<< HEAD
+#EntryHead{
+    background-color: black;
+    color:white;
 }
 =======
+
+
+
+
+
+
+
+.gallery {
+    -webkit-column-count: 3;
+    -moz-column-count: 3;
+    column-count: 3;
+    -webkit-column-width: 33%;
+    -moz-column-width: 33%;
+    column-width: 33%;
+}
+
+    .gallery .pics {
+        -webkit-transition: all 350ms ease;
+        transition: all 350ms ease;
+    }
+
+    .gallery .animation {
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        transform: scale(1);
+    }
+
+@media (max-width: 450px) {
+    .gallery {
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1;
+        -webkit-column-width: 100%;
+        -moz-column-width: 100%;
+        column-width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .btn.filter {
+        padding-left: 1.1rem;
+        padding-right: 1.1rem;
+    }
 }
 
 
-.eu4head{
-    text-align:center;
-    height:20%;
-    width:80%;
-    left:10%;
-    right:10%;
-}
 
 
 
 
-
-
-
-
-
->>>>>>> 19f93ae2d25e53a68ca4922d15482677794b3c84
+>>>>>>> 51a1f56abc4bd98d2ec075a69b20a90ef2822344

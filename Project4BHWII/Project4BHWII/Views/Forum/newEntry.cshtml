@@ -4,18 +4,13 @@
     document.getElementById("HeaderPic").style.backgroundImage = "url('../../Media/Pictures/Hoi4Banner.png')";
 </script>
 
-
 @model  Project4BHWII.Models.newEntry
 @using Project4BHWII.Models
 @{
     ViewBag.Title = "newEntry";
 }
-
-<h2>neuer Eintrag</h2>
-
 @using (Html.BeginForm())
-{  
-    
+{
 <table align="center" class="ForumsEntry">
     <thead>
         <tr id="EntryHead">
@@ -27,7 +22,6 @@
         <td>
             Username:
         </td>
-
             @{
                 User user = Session["User"] as User;
                 if (user != null)
@@ -44,21 +38,13 @@
                 }
             }
         </tr>
-        <div class="ForumsEntry">
-            <tr>
-                <td colspan="2">@Html.TextAreaFor(u => u.Entry, new { required = "required" })</td>
-            </tr>
-        </div>
+        <tr>
+            <td colspan="2">@Html.TextAreaFor(u => u.Entry, new { required = "required" })</td>
+        </tr>
         <td colspan="2" , style="text-align: center">
-            <input type="submit" value="Posten" id="btnSubmit" />
-            <input type="reset" value="abbrechen" id="btnReset" />
+            <input type="submit" value="Posten" id="btnSubmit" class="btn bg-secondary"/>
+            <a href="@Url.Action("Index", "Home")" class="btn bg-secondary">abbrechen</a>
         </td>
     </tbody>
-    <tfoot>
-    </tfoot>
 </table>
 }
-
-
-
-

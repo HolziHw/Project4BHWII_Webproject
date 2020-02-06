@@ -85,12 +85,6 @@ body {
     color:white;
 }
 
-
-
-
-
-
-
 .gallery {
     -webkit-column-count: 3;
     -moz-column-count: 3;
@@ -100,16 +94,16 @@ body {
     column-width: 33%;
 }
 
-    .gallery .pics {
-        -webkit-transition: all 350ms ease;
-        transition: all 350ms ease;
-    }
+.gallery .pics {
+    -webkit-transition: all 350ms ease;
+    transition: all 350ms ease;
+}
 
-    .gallery .animation {
-        -webkit-transform: scale(1);
-        -ms-transform: scale(1);
-        transform: scale(1);
-    }
+.gallery .animation {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
 
 @media (max-width: 450px) {
     .gallery {
@@ -129,8 +123,9 @@ body {
     }
 }
 
-
-
-
-
-
+table.LoginCss{
+    border: solid;
+    border-width: 3px;
+    border-radius:10px;
+    border-color: black;
+}
