@@ -156,8 +156,8 @@
     <Content Include="Media\Pictures\EUbanner_Steam.png" />
     <Content Include="Media\Pictures\europa-universalis-4-background-4.jpg" />
     <Content Include="Media\Pictures\Hoi4Banner.png" />
-    <Content Include="Media\Pictures\paradox logo.jpg" />
     <Content Include="Media\Pictures\paradoxicon.png" />
+    <Content Include="Media\Pictures\paradoxlogo.jpg" />
     <Content Include="Media\Pictures\Starcraft2_banner.jpg" />
     <Content Include="Media\Pictures\UserIcon.png" />
     <Content Include="Scripts\bootstrap.bundle.js" />
