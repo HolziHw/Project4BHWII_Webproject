@@ -3,10 +3,6 @@
 @import url('https://fonts.googleapis.com/css?family=Numans');
 
 html, body {
-    background-image: url('../Media/Pictures/Anno1800Wallpaper.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100%;
     font-family: 'Numans', sans-serif;
 }
 
@@ -228,4 +224,10 @@ table.LoginCss{
     border-width: 3px;
     border-radius:10px;
     border-color: black;
+}
+
+#LoginBachground {
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
 }
