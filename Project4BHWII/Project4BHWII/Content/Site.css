@@ -82,8 +82,12 @@ input:focus {
         margin-left: 4px;
     }
 
+
+#HeaderText{
+    position: absolute;
+}
 #HeaderPic{
-    background-image: url(../../Media/Pictures/Eu4_banner2.jfif);
+    background-image: url(../../Media/Pictures/Eu4banner.jfif);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
