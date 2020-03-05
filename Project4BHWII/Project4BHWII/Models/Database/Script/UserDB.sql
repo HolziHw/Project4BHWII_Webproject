@@ -18,14 +18,15 @@ create table entries(
 	id int not null auto_increment,
     id_user int not null,
     titel varchar(180) not null,
-    entryText varchar(10000) not null,
-    uploadData varchar(10000000),
-    EntryTyp varchar(180) not null,
+    entryText text not null,
+    uploadData varchar(21000),
+    EntryTyp int not null,
     
     constraint id_PK primary key(id),
     foreign key (id_user) references users(id)
     );
 
+	insert into entries values (1,1,"alkdsf","adflkajsdf",null,"1");
 
-
-select * from users;
+select e.id,e.titel,e.entryText,e.uploadData,e.EntryTyp,u.username
+ from entries as e inner join users as u on e.id_user = u.id;

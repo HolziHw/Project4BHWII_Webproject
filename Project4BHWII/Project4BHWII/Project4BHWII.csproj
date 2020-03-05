@@ -336,6 +336,7 @@
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Forum\newEntry.cshtml" />
     <Content Include="Views\Shared\Message.cshtml" />
+    <Content Include="Views\Forum\allEntries.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

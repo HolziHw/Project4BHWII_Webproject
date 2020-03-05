@@ -15,6 +15,11 @@ namespace Project4BHWII.Controllers
 
         }
 
+        public ActionResult allEntries()
+        {
+
+        }
+
         public ActionResult newEntry(newEntry newEntryFromForm)
         {
             return View();

@@ -12,18 +12,18 @@ namespace Project4BHWII.Models
        public string UserName { get; set; }
        public string Titel { get; set; }
        public string Entry { get; set; }
-       public HttpPostedFileBase UploadData { get; set; }
+       public string UploadDataURL { get; set; }
        public EntryType EntryType { get; set; }
 
 
         public newEntry() : this("", "", "", null, EntryType.notSpecified) { }
 
-        public newEntry(string username,string titel, string entry, HttpPostedFileBase uplaodData, EntryType entryType)
+        public newEntry(string username,string titel, string entry, string uplaodData, EntryType entryType)
         {
             this.UserName = username;
             this.Titel = titel;
             this.Entry = entry;
-            this.UploadData = uplaodData;
+            this.UploadDataURL = uplaodData;
             this.EntryType = entryType; 
         }
        
