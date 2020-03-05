@@ -35,14 +35,15 @@ namespace Project4BHWII.Models.Database
 
         public bool Insert(newEntry Entry)
         {
+            //User user = Session["User"];
             DbCommand cmdInsert = _connection.CreateCommand();
             cmdInsert.CommandText = "INSET into entries values null,@userId,@titel,@entryText,@uploadData,@entryType";
-
+            
             DbParameter paramUserId = cmdInsert.CreateParameter();
             paramUserId.ParameterName = "userId";
             paramUserId.Value = Entry.Entry;
             paramUserId.DbType = DbType.Int32;
-
+            
             DbParameter paramTitel = cmdInsert.CreateParameter();
             paramTitel.ParameterName = "titel";
             paramTitel.Value = Entry.Titel;
@@ -90,6 +91,7 @@ namespace Project4BHWII.Models.Database
         {
             throw new NotImplementedException();
         }
+
         public List<newEntry> allEntries()
         {
             List<newEntry> entries = new List<newEntry>();
@@ -98,6 +100,7 @@ namespace Project4BHWII.Models.Database
 
             using(DbDataReader reader = cmdAllEntries.ExecuteReader())
             {
+                reader.Read();
                 while(reader.Read())
                 {
                     entries.Add(

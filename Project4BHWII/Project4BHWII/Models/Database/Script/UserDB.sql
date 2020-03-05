@@ -28,5 +28,4 @@ create table entries(
 
 	insert into entries values (1,1,"alkdsf","adflkajsdf",null,"1");
 
-select e.id,e.titel,e.entryText,e.uploadData,e.EntryTyp,u.username
- from entries as e inner join users as u on e.id_user = u.id;
+select * from users;

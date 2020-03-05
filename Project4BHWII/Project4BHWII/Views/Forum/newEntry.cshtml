@@ -23,7 +23,7 @@
             Username:
         </td>
             @{
-                User user = Session["User"] as User;
+                User user = Session["loggedinUser"] as User;
                 if (user != null)
                 {
                     <td>

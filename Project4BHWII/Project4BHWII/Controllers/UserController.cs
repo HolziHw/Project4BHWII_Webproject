@@ -17,13 +17,26 @@ namespace Project4BHWII.Controllers
         {
             return View(new User());
         }[HttpPost]
-        
-        public ActionResult Login(User UserDaten)
+
+        public ActionResult Login(UserLogin UserDaten)
         {
-            UserDaten.Firstname = "Holzi";
-            UserDaten.Username = "Holzi";
-            Session["User"] = UserDaten;
-            return RedirectToAction("Index","Home");
+            User userFromDB;
+            rep = new RepUserDB();
+            rep.Open();
+            rep.Login(UserDaten);
+            userFromDB = rep.Login(UserDaten);
+            rep.Close();
+            if (userFromDB == null) //Username und PW stimmen nicht
+            {
+                ModelState.AddModelError("Username", "Benutzername oder Passswort stimmen nicht überein");
+                return View(UserDaten);
+            }
+            else
+            {
+                //der komplette User wird in einer Session Variable abgelegt und ist somit auf jeder Seite verfügbar
+                Session["loggedinUser"] = userFromDB;
+                return RedirectToAction("index", "home");
+            }
         }
 
         public ActionResult Registration()

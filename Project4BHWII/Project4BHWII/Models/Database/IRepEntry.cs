@@ -10,7 +10,7 @@ namespace Project4BHWII.Models.Database
     {
         void Open();
         void Close();
-        bool Insert(newEntry Entry);
+        bool Insert(newEntry Entry );
         bool Delete(int id);
         bool Update(int id, newEntry UpdatedEntry);
         List<newEntry> allEntries();
