@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Project4BHWII.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,7 +14,7 @@ namespace Project4BHWII.Controllers
             return View();
         }
 
-        public ActionResult newEntry()
+        public ActionResult newEntry(newEntry newEntryFromForm)
         {
             return View();
         }

@@ -1,17 +1,17 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Common;
 using System.Linq;
 using System.Web;
+using MySql.Data.MySqlClient;
 
 namespace Project4BHWII.Models.Database
 {
     public class RepUserDB : IRepUser
     {
 
-        private string _connectionString = "Server=localhost;Database=einfuehrungBsp;Uid=root;Pwd=Sammiegsg9;";
+        private string _connectionString = "Server=localhost;Database=WebProjekt;Uid=root;Pwd=Sammiegsg9;";
         private MySqlConnection _connection = null;
 
         public void Open()
@@ -176,15 +176,6 @@ namespace Project4BHWII.Models.Database
 
             // ExecuteNonQuery wird bei insert verwendet und liefert die Anzahl der geändeten, gelöschent, ... Zeilen zurück
             return cmdInsert.ExecuteNonQuery() == 1;
-
-            if (cmdInsert.ExecuteNonQuery() == 1)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
         }
 
 

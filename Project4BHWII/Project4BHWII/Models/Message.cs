@@ -7,7 +7,6 @@ namespace Project4BHWII.Models
 {
     public class Message
     {
-
         public string Header { get; set; }
         public string AdditionalHeader { get; set; }
         public string MessageText { get; set; }

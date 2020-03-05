@@ -158,7 +158,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Database\IRepEntry.cs" />
     <Compile Include="Models\Database\IRepUser.cs" />
+    <Compile Include="Models\Database\RepEntryDB.cs" />
     <Compile Include="Models\Database\RepUserDB.cs" />
     <Compile Include="Models\Message.cs" />
     <Compile Include="Models\newEntry.cs" />
@@ -191,7 +193,7 @@
     <Content Include="Media\Pictures\paradoxlogo.jpg" />
     <Content Include="Media\Pictures\Starcraft2_banner.jpg" />
     <Content Include="Media\Pictures\UserIcon.png" />
-    <Content Include="Models\Database\Script\userLoginDB.sql" />
+    <Content Include="Models\Database\Script\UserDB.sql" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -333,6 +335,7 @@
     <Content Include="Views\Shared\Navbar_V2.cshtml" />
     <Content Include="Views\Shared\Footer.cshtml" />
     <Content Include="Views\Forum\newEntry.cshtml" />
+    <Content Include="Views\Shared\Message.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

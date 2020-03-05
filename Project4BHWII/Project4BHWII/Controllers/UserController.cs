@@ -16,10 +16,8 @@ namespace Project4BHWII.Controllers
         public ActionResult Login()
         {
             return View(new User());
-        }
-
-
-        [HttpPost]
+        }[HttpPost]
+        
         public ActionResult Login(User UserDaten)
         {
             UserDaten.Firstname = "Holzi";
@@ -28,22 +26,28 @@ namespace Project4BHWII.Controllers
             return RedirectToAction("Index","Home");
         }
 
+        public ActionResult Registration()
+        {
+            return View();
+        }[HttpPost]
+
         public ActionResult Registration(User userFromForm)
         {
-            if(userFromForm == null)
+            if (userFromForm == null)
             {
                 return RedirectToAction("Registration");
             }
 
-            if (!ModelState.IsValid)
+            CheckUserData(userFromForm);
+            if(!ModelState.IsValid)
             {
                 return View(userFromForm);
             }
             else
             {
                 rep = new RepUserDB();
-                rep.Open()
-                if(rep.Insert(userFromForm))
+                rep.Open();
+                if (rep.Insert(userFromForm))
                 {
                     rep.Close();
                     return View("Message", new Message("Registrierung erfolgeich", "Ihre Daten wurden erfolgreich gespeichert"));
@@ -52,7 +56,7 @@ namespace Project4BHWII.Controllers
             }
            
             return View();
-        }
+        }[HttpGet]
 
         public void CheckUserData(User user)
         {
