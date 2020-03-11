@@ -4,7 +4,7 @@
     document.getElementById("HeaderPic").style.backgroundImage = "url('../../Media/Pictures/Eu4banner_2.jfif')";
 </script>
 
-
+@using WebAppGrundlagen.Models
 
 
 @{
@@ -14,3 +14,36 @@
 <h1 class="text-md-center">Welcome</h1>
 
 <a href='@Url.Action("newEntry", "Forum")' class="btn btn-primary">neuer Post</a>
+
+<h2 class="justify-content-center">All Posts</h2>
+@if (Model != null && Model.Count > 0)
+{
+<table>
+    <thead>
+    <td>Text</td>
+    <td>Savegame</td>
+
+    </thead>
+    <tbody>
+        @foreach (Entry u in Model)
+        {
+            <td>@u.username</td>
+            <td>@u.title</td>
+            <td>@u.Entry</td>
+            @if (UploadDataURL != null)
+            {
+                <td>@u.UploadDataURL</td>
+            }
+            <td>@u.type</td>
+        }
+        </tbody>
+        <tfoot>
+            <tr colspan="8"></tr>
+        </tfoot>
+    </table>
+}
+else
+{
+    <p>Es existriert kein Post</p>
+
+}
