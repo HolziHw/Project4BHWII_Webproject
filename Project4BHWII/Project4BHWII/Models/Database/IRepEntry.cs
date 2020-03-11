@@ -6,14 +6,15 @@ using System.Threading.Tasks;
 
 namespace Project4BHWII.Models.Database
 {
+
     interface IRepEntry
     {
         void Open();
         void Close();
-        bool Insert(newEntry Entry);
+        bool Insert(Entry Entry, string Username);
         bool Delete(int id);
-        bool Update(int id, newEntry UpdatedEntry);
-        List<newEntry> allEntries();
+        bool Update(int id, Entry UpdatedEntry);
+        List<Entry> allEntries();
         
     }
 }

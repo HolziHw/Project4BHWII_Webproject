@@ -163,7 +163,7 @@
     <Compile Include="Models\Database\RepEntryDB.cs" />
     <Compile Include="Models\Database\RepUserDB.cs" />
     <Compile Include="Models\Message.cs" />
-    <Compile Include="Models\newEntry.cs" />
+    <Compile Include="Models\Entry.cs" />
     <Compile Include="Models\Session.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserLogin.cs" />

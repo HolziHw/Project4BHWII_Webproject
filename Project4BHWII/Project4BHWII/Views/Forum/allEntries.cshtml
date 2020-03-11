@@ -7,4 +7,48 @@
 
 <h2>Alle Postes das Forums</h2>
 
-@
+@if (Model != null && Model.Count > 0)
+{
+    <table>
+        <thead>
+            <tr>
+                <td>Username</td>
+                <td>Titel</td>
+                <td>Entry</td>
+                <td>UploadFile</td>
+                <td>Type</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (newEntry u in Model)
+            {
+                <tr>
+                    <td>@u.UserName</td>
+                    <td>@u.Titel</td>
+                    <td>@u.Entry</td>
+                    <td>@u.UploadDataURL</td>
+                    <td>@u.EntryType</td>
+                    <td>
+                        <!--
+                            Formular für den Löschen-button erzeugen
+                            methode = "post" ...    Formulardaten werden nicht in der Adressleiste angezeigt
+                            action ... wohin das Formular gesendet wird (AdminController und dort in der delete Methode)
+                            es wird ein Parameter mit dem Namen id übermittelt
+                        -->
+                        <form method="get" action="/admin/delete/">
+                            <input type="submit" value="löschen" />
+                        </form>
+                    </td>
+                    <td>update</td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr colspan="8"></tr>
+        </tfoot>
+    </table>
+}
+else
+{
+    <p>Es existieren keine Posts</p>
+}

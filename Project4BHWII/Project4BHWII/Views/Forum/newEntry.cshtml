@@ -1,13 +1,14 @@
-﻿<script>
+﻿
+<script>
     document.getElementById("HeaderText").innerHTML = "";
     document.getElementById("HeaderSubTitle").innerHTML = "";
     document.getElementById("HeaderPic").style.backgroundImage = "url('../../Media/Pictures/Hoi4Banner.png')";
 </script>
 
-@model  Project4BHWII.Models.newEntry
+@model  Project4BHWII.Models.Entry
 @using Project4BHWII.Models
 @{
-    ViewBag.Title = "newEntry";
+    ViewBag.Title = "Entry";
 }
 @using (Html.BeginForm())
 {
@@ -23,7 +24,7 @@
             Username:
         </td>
             @{
-                User user = Session["User"] as User;
+                User user = Session["loggedinUser"] as User;
                 if (user != null)
                 {
                     <td>
@@ -39,7 +40,7 @@
             }
         </tr>
         <tr>
-            <td colspan="2">@Html.TextAreaFor(u => u.Entry, new { required = "required" })</td>
+            <td colspan="2">@Html.TextAreaFor(u => u.EntryText, new { required = "required" })</td>
         </tr>
         <td colspan="2" , style="text-align: center">
             <input type="submit" value="Posten" id="btnSubmit" class="btn bg-secondary"/>
