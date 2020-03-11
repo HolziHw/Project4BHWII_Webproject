@@ -16,8 +16,9 @@ namespace Project4BHWII.Controllers
         public ActionResult Login()
         {
             return View(new User());
-        }[HttpPost]
-
+        }
+        
+        [HttpPost]
         public ActionResult Login(UserLogin UserDaten)
         {
             User userFromDB;

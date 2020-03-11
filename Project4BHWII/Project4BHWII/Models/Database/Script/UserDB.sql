@@ -16,16 +16,14 @@ create table users(
 
 create table entries(
 	id int not null auto_increment,
-    id_user int not null,
+    id_name varchar(180) not null,
     titel varchar(180) not null,
     entryText text not null,
     uploadData varchar(21000),
     EntryTyp int not null,
-    
-    constraint id_PK primary key(id),
-    foreign key (id_user) references users(id)
+    constraint id_PK primary key(id)
     );
 
-	insert into entries values (1,1,"alkdsf","adflkajsdf",null,"1");
+	insert into users values (0,"Guest","Guest",0,2000-10-10,"Guest",sha2("1unsicheresGuestPW!",512));
 
 select * from users;

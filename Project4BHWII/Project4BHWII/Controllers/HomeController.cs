@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Project4BHWII.Models;
+using Project4BHWII.Models.Database;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,12 +10,18 @@ namespace Project4BHWII.Controllers
 {
     public class HomeController : Controller
     {
+        IRepEntry rep;
         public ActionResult Index()
         {
-            return View();
+            List<Entry> allEntries;
+            rep = new RepEntryDB();
+            rep.Open();
+            allEntries = rep.allEntries();
+            rep.Close();
+            return View(allEntries);
         }
 
-        public ActionResult newEntry()
+        public ActionResult allEntries()
         {
             return View();
         }

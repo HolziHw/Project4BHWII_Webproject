@@ -19,7 +19,7 @@ namespace Project4BHWII.Controllers
 
         public ActionResult allEntries()
         {
-            List<newEntry> entries;
+            List<Entry> entries;
             rep = new RepEntryDB();
             rep.Open();
             entries = rep.allEntries();
@@ -27,9 +27,15 @@ namespace Project4BHWII.Controllers
             return View(entries);
         }
 
-        public ActionResult newEntry(newEntry newEntryFromForm)
+        [HttpPost]
+        public ActionResult newEntry(Entry newEntryFromForm)
         {
 
+            return View();
+        }
+
+        public ActionResult newEntry()
+        {
             return View();
         }
     }
