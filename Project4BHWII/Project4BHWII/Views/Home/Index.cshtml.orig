@@ -26,12 +26,21 @@
     </thead>
 
     <tbody>
+<<<<<<< HEAD
+        @{ foreach (Entry u in Model)
+            {
+                <td>@u.UserName</td>
+                <td>@u.Titel</td>
+                <td>@u.EntryText</td>
+                if (u.UploadDataURL != null)
+=======
         @foreach (Entry u in Model)
         {
                 <td>@u.UserName</td>
                 <td>@u.Titel</td>
                 <td>@u.EntryText</td>
                 @if (u.UploadDataURL != null)
+>>>>>>> 510fa9db93bf1ac6c14a6bb71602b6487e20dc20
                 {
                     <td>@u.UploadDataURL</td>
                 }
