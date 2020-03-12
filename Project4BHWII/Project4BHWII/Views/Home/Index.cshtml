@@ -26,16 +26,16 @@
     </thead>
 
     <tbody>
-        @foreach (Entry u in Model)
-        {
-                <td>@u.username</td>
-                <td>@u.title</td>
-                <td>@u.Entry</td>
-                @if (UploadDataURL != null)
+        @{ foreach (Entry u in Model)
+            {
+                <td>@u.UserName</td>
+                <td>@u.Titel</td>
+                <td>@u.EntryText</td>
+                if (u.UploadDataURL != null)
                 {
                     <td>@u.UploadDataURL</td>
                 }
-                <td>@u.type</td>
+                <td>@u.EntryType</td>
             }
 
         }
