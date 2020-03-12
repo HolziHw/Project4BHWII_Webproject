@@ -17,36 +17,47 @@
 
 <h2 class="justify-content-center">All Posts</h2>
 
-@if (Model != null && Model.Count > 0)
-{
-<table>
-    <thead>
-        <td>Text</td>
-        <td>Savegame</td>
-    </thead>
+@{
+    if (Model != null && Model.Count > 0)
+    {
 
-    <tbody>
-        @foreach (Entry u in Model)
+        foreach (Entry u in Model)
         {
-                <td>@u.UserName</td>
-                <td>@u.Titel</td>
-                <td>@u.EntryText</td>
-                @if (u.UploadDataURL != null)
-                {
-                    <td>@u.UploadDataURL</td>
-                }
-                <td>@u.EntryType</td>
-            }
+    <table>
+        <thead>
+        <td>Name</td>
+        <td>Titel</td>
+        <td>Text</td>
+        <td>URL</td>
+        <td>EntryType</td>
+        </thead>
+        <tbody>
 
+        <td>@u.UserName</td>
+        <td>@u.Titel</td>
+        <td>@u.EntryText</td>
+        @{
+            if (u.UploadDataURL != null)
+            {
+                <td>@u.UploadDataURL</td>
+            }
+            else
+            {
+                <td>Es ist kein Savegame vorhanden</td>
+            }
+            <td>@u.EntryType</td>
         }
+        
         </tbody>
         <tfoot>
             <tr colspan="8"></tr>
         </tfoot>
     </table>
-}
-else
-{
-    <p>Es existriert kein Post</p>
+        }
+    }
+    else
+    {
+        < p > Es existriert kein Post </ p >
 
+    }
 }
