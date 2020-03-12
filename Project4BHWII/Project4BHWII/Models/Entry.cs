@@ -8,7 +8,7 @@ namespace Project4BHWII.Models
     public enum EntryType {Text, SaveGame,notSpecified};
     public class Entry
     {
-
+        
        public string UserName { get; set; }
        public string Titel { get; set; }
        public string EntryText { get; set; }

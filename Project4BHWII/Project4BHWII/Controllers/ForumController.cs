@@ -31,16 +31,18 @@ namespace Project4BHWII.Controllers
         [HttpPost]
         public ActionResult newEntry(Entry newEntryFromForm)
         {
-            UserLogin user = Session["loggedinUser"] as UserLogin;
+            UserLogin user;
+            user = Session["loggedinUser"] as UserLogin;
             if(user == null)
             {
+                user = new UserLogin();
                 user.Username = "Gast";
             }
             rep = new RepEntryDB();
             rep.Open();
             rep.Insert(newEntryFromForm, user.Username);
             rep.Close();
-            return View();
+            return RedirectToAction("Index","Home");
         }
 
         public ActionResult newEntry()

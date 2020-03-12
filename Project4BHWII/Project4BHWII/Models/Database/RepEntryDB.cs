@@ -36,12 +36,12 @@ namespace Project4BHWII.Models.Database
         public bool Insert(Entry Entry, string username)
         {
 
-            DbCommand cmdInsert = _connection.CreateCommand();
-            cmdInsert.CommandText = "INSET into entries values null,@userName,@titel,@entryText,@uploadData,@entryType";
+            DbCommand cmdInsert = this._connection.CreateCommand();
+            cmdInsert.CommandText = "INSERT into entries values (null, @userName, @titel, @entryText, @uploadData, @entryType)";
             
             DbParameter paramUserId = cmdInsert.CreateParameter();
-            paramUserId.ParameterName = "userId";
-            paramUserId.Value = "toBeImplementet";
+            paramUserId.ParameterName = "userName";
+            paramUserId.Value = username;
             paramUserId.DbType = DbType.String;
             
             DbParameter paramTitel = cmdInsert.CreateParameter();
@@ -50,19 +50,19 @@ namespace Project4BHWII.Models.Database
             paramTitel.DbType = DbType.String;
 
             DbParameter paramText = cmdInsert.CreateParameter();
-            paramTitel.ParameterName = "entryText";
-            paramTitel.Value = Entry.EntryText;
-            paramTitel.DbType = DbType.String;
+            paramText.ParameterName = "entryText";
+            paramText.Value = Entry.EntryText;
+            paramText.DbType = DbType.String;
 
             DbParameter paramUpload = cmdInsert.CreateParameter();
-            paramTitel.ParameterName = "uploadData";
-            paramTitel.Value = Entry.UploadDataURL;
-            paramTitel.DbType = DbType.String;
+            paramUpload.ParameterName = "uploadData";
+            paramUpload.Value = Entry.UploadDataURL;
+            paramUpload.DbType = DbType.String;
 
             DbParameter paramType = cmdInsert.CreateParameter();
-            paramTitel.ParameterName = "entryType";
-            paramTitel.Value = Entry.EntryType;
-            paramTitel.DbType = DbType.Int32;
+            paramType.ParameterName = "entryType";
+            paramType.Value = Entry.EntryType;
+            paramType.DbType = DbType.Int32;
 
             cmdInsert.Parameters.Add(paramUserId);
             cmdInsert.Parameters.Add(paramTitel);
@@ -126,17 +126,16 @@ namespace Project4BHWII.Models.Database
         {
             List<Entry> entries = new List<Entry>();
             DbCommand cmdAllEntries = _connection.CreateCommand();
-            cmdAllEntries.CommandText = "select * from entries; ";
+            cmdAllEntries.CommandText = "select id_name,titel,entryText,uploadData,EntryTyp from entries; ";
 
             using(DbDataReader reader = cmdAllEntries.ExecuteReader())
             {
-                reader.Read();
                 while(reader.Read())
                 {
                     entries.Add(
                         new Entry
                         {
-                            UserName = Convert.ToString(reader[5]),
+                            UserName = Convert.ToString(reader[0]),
                             Titel = Convert.ToString(reader[1]),
                             EntryText = Convert.ToString(reader[2]),
                             UploadDataURL = Convert.ToString(reader[3]),

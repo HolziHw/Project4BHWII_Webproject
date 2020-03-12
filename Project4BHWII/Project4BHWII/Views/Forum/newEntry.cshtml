@@ -40,6 +40,10 @@
             }
         </tr>
         <tr>
+            <td>Titel:</td>
+            <td>@Html.TextBoxFor(u => u.Titel, new { required = "required" })</td>
+        </tr>
+        <tr>
             <td colspan="2">@Html.TextAreaFor(u => u.EntryText, new { required = "required" })</td>
         </tr>
         <td colspan="2" , style="text-align: center">

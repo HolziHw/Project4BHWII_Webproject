@@ -14,6 +14,8 @@ create table users(
     constraint id_PK primary key(id)
 )engine=InnoDB;
 
+drop table entries;
+
 create table entries(
 	id int not null auto_increment,
     id_name varchar(180) not null,
