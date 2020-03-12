@@ -11,6 +11,7 @@ namespace Project4BHWII.Controllers
     public class ForumController : Controller
     {
         IRepEntry rep;
+
         public ActionResult Index()
         {
             return View();
@@ -30,12 +31,23 @@ namespace Project4BHWII.Controllers
         [HttpPost]
         public ActionResult newEntry(Entry newEntryFromForm)
         {
-
-            return View();
+            UserLogin user;
+            user = Session["loggedinUser"] as UserLogin;
+            if(user == null)
+            {
+                user = new UserLogin();
+                user.Username = "Gast";
+            }
+            rep = new RepEntryDB();
+            rep.Open();
+            rep.Insert(newEntryFromForm, user.Username);
+            rep.Close();
+            return RedirectToAction("Index","Home");
         }
 
         public ActionResult newEntry()
         {
+
             return View();
         }
     }

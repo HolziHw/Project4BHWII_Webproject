@@ -1,4 +1,4 @@
-﻿@model List<Project4BHWII.Models.newEntry>
+﻿@model List<Project4BHWII.Models.Entry>
 @using Project4BHWII.Models
 
 @{
@@ -20,12 +20,12 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (newEntry u in Model)
+            @foreach (Entry u in Model)
             {
                 <tr>
                     <td>@u.UserName</td>
                     <td>@u.Titel</td>
-                    <td>@u.Entry</td>
+                    <td>@u.EntryText</td>
                     <td>@u.UploadDataURL</td>
                     <td>@u.EntryType</td>
                     <td>
