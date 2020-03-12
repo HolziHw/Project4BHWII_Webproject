@@ -89,18 +89,44 @@ namespace Project4BHWII.Models.Database
         }
         public bool Update(int id, Entry UpdatedEntry)
         {
-            DbCommand cmdUpadate = _connection.CreateCommand();
-            cmdUpadate.CommandText = "UPDATE entires SET id = id, id_name = id_name,titel = @Titel, entryText = @entryText, uploadData = @UploadData,EntryTyp = @ EntryTyp";
+            DbCommand cmdUpdate = _connection.CreateCommand();
+            cmdUpdate.CommandText = "UPDATE entires SET id = id, id_name = id_name,titel = @Titel, entryText = @entryText, uploadData = @UploadData,EntryTyp = @EntryTyp";
 
 
+            DbParameter paramTitel = cmdUpdate.CreateParameter();
+            paramTitel.ParameterName = "Titel";
+            paramTitel.Value = UpdatedEntry.Titel;
+            paramTitel.DbType = DbType.String;
 
+            DbParameter paramText = cmdUpdate.CreateParameter();
+            paramText.ParameterName = "entryText";
+            paramText.Value = UpdatedEntry.EntryText;
+            paramText.DbType = DbType.String;
+
+            DbParameter paramData = cmdUpdate.CreateParameter();
+            paramData.ParameterName = "UploadData";
+            paramData.Value = UpdatedEntry.UploadDataURL;
+            paramData.DbType = DbType.String;
+
+            DbParameter paramTyp = cmdUpdate.CreateParameter();
+            paramTyp.ParameterName = "EntryTyp";
+            paramTyp.Value = UpdatedEntry.EntryType;
+            paramTyp.DbType = DbType.Int32;
+
+
+            cmdUpdate.Parameters.Add(paramTitel);
+            cmdUpdate.Parameters.Add(paramText);
+            cmdUpdate.Parameters.Add(paramData);
+            cmdUpdate.Parameters.Add(paramTyp);
+
+            return cmdUpdate.ExecuteNonQuery() == 1;
         }
 
         public List<Entry> allEntries()
         {
             List<Entry> entries = new List<Entry>();
             DbCommand cmdAllEntries = _connection.CreateCommand();
-            cmdAllEntries.CommandText = "select e.titel,e.entryText,e.uploadData,e.EntryTyp,u.username from entries as e inner join users as u on e.id_user = u.id; ";
+            cmdAllEntries.CommandText = "select * from entries; ";
 
             using(DbDataReader reader = cmdAllEntries.ExecuteReader())
             {
