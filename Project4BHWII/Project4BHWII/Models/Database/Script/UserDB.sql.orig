@@ -25,7 +25,3 @@ create table entries(
     );
 
 select * from users;
-
-update users
-set password = sha2("Hallo", 512)
-where id = 0;

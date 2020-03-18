@@ -4,8 +4,8 @@
     document.getElementById("HeaderPic").style.backgroundImage = "url('../../Media/Pictures/Eu4banner_2.jfif')";
 </script>
 
+@model List<Project4BHWII.Models.Entry>
 @using Project4BHWII.Models
-
 
 @{
     ViewBag.Title = "Home Page";
@@ -15,47 +15,97 @@
 
 <a href='@Url.Action("newEntry", "Forum")' class="btn btn-primary">neuer Post</a>
 
-<h2 class="justify-content-center">All Posts</h2>
-
-@if (Model != null && Model.Count > 0)
-{
-<table>
-    <thead>
-        <td>Text</td>
-        <td>Savegame</td>
-    </thead>
-
-    <tbody>
 <<<<<<< HEAD
-        @{ foreach (Entry u in Model)
-            {
-                <td>@u.UserName</td>
-                <td>@u.Titel</td>
-                <td>@u.EntryText</td>
-                if (u.UploadDataURL != null)
-=======
-        @foreach (Entry u in Model)
+<h2 class="text-md-center">All Posts</h2>
+    @{
+        if (Model != null && Model.Count > 0)
         {
-                <td>@u.UserName</td>
-                <td>@u.Titel</td>
-                <td>@u.EntryText</td>
-                @if (u.UploadDataURL != null)
->>>>>>> 510fa9db93bf1ac6c14a6bb71602b6487e20dc20
-                {
-                    <td>@u.UploadDataURL</td>
-                }
-                <td>@u.EntryType</td>
+
+            foreach (Entry u in Model)
+            {
+        
+            <table class="ForumsEintrag"  style="background-color: #ffffff">
+                <thead>
+                <td class="ForumsTitel">Titel</td>
+                <td class="ForumsTitel">@u.Titel</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Autor</td>
+                        <td>@u.UserName</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">@u.EntryText</td>
+                    </tr>
+                    <tr>
+                        @if (!String.IsNullOrEmpty(u.UploadDataURL.Trim()))
+                        {
+                            <td colspan="2">@u.UploadDataURL</td>
+                        }
+                        else
+                        {
+                            <td colspan="2">Es ist kein Savegame vorhanden</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
             }
+        }
+        else
+        {
+            < p > Es existriert kein Post </ p >
 
         }
-        </tbody>
-        <tfoot>
-            <tr colspan="8"></tr>
-        </tfoot>
-    </table>
-}
-else
-{
-    <p>Es existriert kein Post</p>
+=======
+<h2>Alle Postes das Forums</h2>
 
-}
+    @if (Model != null && Model.Count > 0)
+    {
+        foreach (Entry u in Model)
+        {
+            <table class="post">
+                <thead class="post">
+                    <tr>
+                        <td>Id</td>
+                        <td>Username</td>
+                        <td>Titel</td>
+                        <td>Entry</td>
+                        <td>UploadFile</td>
+                        <td>Type</td>
+                    </tr>
+                </thead>
+                <tbody class="post">
+
+                    <tr>
+                        <td>@u.Id</td>
+                        <td>@u.UserName</td>
+                        <td>@u.Titel</td>
+                        <td>@u.EntryText</td>
+                        <td>@u.UploadDataURL</td>
+                        <td>@u.EntryType</td>
+                        <td>
+                            <!--
+                                Formular für den Löschen-button erzeugen
+                                methode = "post" ...    Formulardaten werden nicht in der Adressleiste angezeigt
+                                action ... wohin das Formular gesendet wird (AdminController und dort in der delete Methode)
+                                es wird ein Parameter mit dem Namen id übermittelt
+                            -->
+                            <form method="post" action="/Home/delete/@u.Id">
+                                <input type="submit" value="löschen" />
+                            </form>
+                        </td>
+                        <td>update</td>
+                    </tr>
+
+                </tbody>
+                <tfoot class="post">
+                    <tr colspan="8"></tr>
+                </tfoot>
+            </table>
+        }
+    }
+    else
+    {
+        <p> Es existieren keine Posts </p>
+>>>>>>> 6006db0bfdad5447ca1c5ca5982fd71c40e844f6
+    }

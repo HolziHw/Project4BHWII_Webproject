@@ -16,5 +16,7 @@ namespace Project4BHWII.Models.Database
         List<User> GetAllUser();
         User GetUser(int id);
         User Login(UserLogin user);
+        bool PWReset(int id, string newPW);
+        User GetUserByUsername(string username);
     }
 }

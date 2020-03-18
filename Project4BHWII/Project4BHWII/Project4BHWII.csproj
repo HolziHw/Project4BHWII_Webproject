@@ -339,6 +339,7 @@
     <Content Include="Views\Shared\Message.cshtml" />
     <Content Include="Views\Forum\allEntries.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\User\PWReset.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

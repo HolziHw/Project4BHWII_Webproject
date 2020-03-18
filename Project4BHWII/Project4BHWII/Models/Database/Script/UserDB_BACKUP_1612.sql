@@ -26,6 +26,14 @@ create table entries(
 
 select * from users;
 
+<<<<<<< HEAD
 update users
 set password = sha2("Hallo", 512)
 where id = 0;
+=======
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8aafeedda877e1ce86e59aa40595c824be3b478c
+select * from entries;
+>>>>>>> 8779ec9b1aa0763987f2304b17f221ce4bfaad5d

@@ -1,17 +1,119 @@
-﻿#HeaderPic{
-    background-image: url(../../Media/Pictures/Eu4banner_2.jfif);
+﻿﻿ /* Made with love by Mutiullah Samim*/
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html, body {
+    font-family: 'Numans', sans-serif;
+}
+
+.container {
+    height: 100%;
+    align-content: center;
+}
+
+.containerR {
+    height: 100%;
+    align-content: center;
+}
+
+.card {
+    height:545px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.cardR {
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.social_icon span {
+    font-size: 60px;
+    margin-left: 10px;
+    color: #FFC312;
+}
+
+    .social_icon span:hover {
+        color: white;
+        cursor: pointer;
+    }
+
+.card-header h3 {
+    color: white;
+}
+
+.social_icon {
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span {
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border: 0 !important;
+}
+
+input:focus {
+    outline: 0 0 0 0 !important;
+    box-shadow: 0 0 0 0 !important;
+}
+
+.remember {
+    color: white;
+}
+
+.remember input {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.login_btn {
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.login_btn:hover {
+    color: black;
+    background-color: white;
+}
+
+.links {
+    color: white;
+}
+
+.links a {
+    margin-left: 4px;
+}
+
+
+#HeaderText {
+    position: absolute;
+}
+
+#HeaderPic {
+    background-image: url(../../Media/Pictures/Eu4banner.jfif);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0px;
     height: 200px;
+    width: 100%;
 }
 
-#Header{
+#Header {
     height: 200px;
 }
 
-a:hover{
-    text-decoration-color:none;
+a:hover {
+    text-decoration-color: none;
     color: black;
     margin: 0;
 }
@@ -20,7 +122,7 @@ a:hover{
     background-color: #626262;
 }
 
-table{
+table {
     border: 1px solid black;
 }
 
@@ -37,23 +139,21 @@ body {
     background-color: #626262;
 }
 
-.footer{
-    position:fixed;
-    left:0;
-    bottom:0;
-    width:100%;
-    height:50px;
-    background-color:#343A40;
-    color:#808080;
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: #343A40;
+    color: #808080;
 }
 
-#Icon{
-
+#Icon {
     margin-right: 4px;
     margin-bottom: 2.5px;
     height: 20px;
     width: 20px;
-
 }
 
 
@@ -64,11 +164,11 @@ body {
 
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
 
-h1,h2,h3,h4,h5,h6,p {
+h1, h2, h3, h4, h5, h6, p {
     font-family: 'Lora', serif;
 }
 
-.ForumsEntry{
+.ForumsEntry {
     min-width: 50%;
     border-style: solid;
     border-width: 3px;
@@ -80,42 +180,15 @@ h1,h2,h3,h4,h5,h6,p {
     min-height: 200px;
 }
 
-#EntryHead{
+#EntryHead {
     background-color: black;
-    color:white;
+    color: white;
 }
-
-<<<<<<< HEAD
-.gallery {
-    -webkit-column-count: 3;
-    -moz-column-count: 3;
-    column-count: 3;
-    -webkit-column-width: 33%;
-    -moz-column-width: 33%;
-    column-width: 33%;
-}
-
-.gallery .pics {
-    -webkit-transition: all 350ms ease;
-    transition: all 350ms ease;
-}
-
-.gallery .animation {
-    -webkit-transform: scale(1);
-    -ms-transform: scale(1);
-    transform: scale(1);
-=======
-
-
-
-
-
 
 .gallerycontainer {
-    position: relative;
-    margin-left:20%;
-    margin-right:auto;
-
+    position: absolute;
+    margin-left: 10%;
+    margin-right: auto;
     /*Add a height attribute and set to largest image's height to prevent overlaying*/
 }
 
@@ -126,12 +199,11 @@ h1,h2,h3,h4,h5,h6,p {
 
 .thumbnail:hover {
     background-color: transparent;
->>>>>>> 42c0b0ff7f612f1c0dbb3d0e256dbfa26c7ecef8
 }
 
-    .thumbnail:hover img {
-        border: 1px solid blue;
-    }
+.thumbnail:hover img {
+    border: 1px solid blue;
+}
 
 .thumbnail span { /*CSS for enlarged image*/
     position: absolute;
@@ -144,21 +216,50 @@ h1,h2,h3,h4,h5,h6,p {
     text-decoration: none;
 }
 
-    .thumbnail span img { /*CSS for enlarged image*/
-        border-width: 0;
-        padding: 2px;
-    }
+.thumbnail span img { /*CSS for enlarged image*/
+    border-width: 0;
+    padding: 2px;
+}
 
 .thumbnail:hover span { /*CSS for enlarged image*/
     visibility: visible;
     top: 0;
-    left: 350px; /*position where enlarged image should offset horizontally */
+    left: 450px; /*position where enlarged image should offset horizontally */
     z-index: 50;
 }
 
-table.LoginCss{
+table.LoginCss {
     border: solid;
     border-width: 3px;
-    border-radius:10px;
+    border-radius: 10px;
     border-color: black;
 }
+
+#LoginBachground {
+    background-image: url('');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/*Ab hier Beginnt die CSS der Forumsseite !*/
+
+<<<<<<< HEAD
+.ForumsEintrag {
+    text-align: center;
+    margin: 20px auto 20px auto;
+    background-color: white;
+}
+
+.ForumsTitel {
+}
+#PostBackgroundWhite {
+}
+=======
+.post {
+    background-color: aliceblue;
+    margin: 20px auto 20px auto;
+    width: 500px;
+}d
+
+
+>>>>>>> 6006db0bfdad5447ca1c5ca5982fd71c40e844f6

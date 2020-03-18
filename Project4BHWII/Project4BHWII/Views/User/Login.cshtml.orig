@@ -1,4 +1,5 @@
-﻿<script>
+﻿﻿
+<script>
     document.getElementById("HeaderText").innerHTML = "";
     document.getElementById("HeaderSubTitle").innerHTML = "";
     document.getElementById("HeaderPic").style.backgroundImage = "url('../../Media/Pictures/Hoi4Banner.png')";
@@ -11,9 +12,13 @@
 
 <body id="LoginBackground">
 
+<<<<<<< HEAD
     <div align="center">
         <h2>Login</h2>
+        <p>@Html.ValidationSummary()</p>
     </div>
+=======
+>>>>>>> 6006db0bfdad5447ca1c5ca5982fd71c40e844f6
 
     <div class="container">
         <div class="d-flex justify-content-center h-100">
@@ -27,80 +32,65 @@
                     </div>
                 </div>
                 <div class="card-body">
-                    <form>
+                    <form action="/User/Login" method="post">
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" placeholder="username">
+                            <input type="text" class="form-control" @Html.TextBoxFor(u => u.Username, new { required = "required", placeholder="username"})
 
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" placeholder="password">
-                        </div>
-                        <div class="row align-items-center remember">
-                            <input type="checkbox">Remember Me
+                            <input type="password" class="form-control" @Html.TextBoxFor(u => u.Password, new { required = "required", placeholder="password" })
                         </div>
                         <div class="form-group">
-                            <input type="submit" value="Login" class="btn float-right login_btn">
+                            <input type="submit" value="absenden" class="btn float-right login_btn" id="btnSubmit">
                         </div>
                     </form>
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Don't have an account?<a href="#">Sign Up</a>
+                        Don't have an account?<a href="/User/Registration">Sign Up</a>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="#">Forgot your password?</a>
+                        <a href="/User/PWReset">Forgot your password?</a>
                     </div>
-<<<<<<< HEAD
-                </form>
-            </div>
-            <div class="card-footer">
-                <div class="d-flex justify-content-center links">
-                    Don't have an account?<a href="/User/Registration">Sign Up</a>
-                </div>
-                <div class="d-flex justify-content-center">
-                    <a href="#">Forgot your password?</a>
-=======
->>>>>>> 600bb87c8c551710f399e5092604528763e007e5
                 </div>
             </div>
         </div>
-    </div>
 
 
 
 
-    @*@using (Html.BeginForm())
-        {
-            <table align="center" class="LoginCss">
-                <thead>
-                    <tr>
-                        <td colspan="2"> Login</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>@Html.LabelFor(u => u.Username, "Username:")</td>
-                        <td>@Html.TextBoxFor(u => u.Username, new { required = "required" })</td>
-                    </tr>
-                    <tr>
-                        <td>@Html.LabelFor(u => u.Password, "Passwort:")</td>
-                        <td>@Html.TextBoxFor(u => u.Password, new { required = "required" })</td>
-                    </tr>
-                <td colspan="2" , style="text-align: center">
-                    <input type="submit" value="absenden" id="btnSubmit" />
-                    <input type="reset" value="abbrechen" id="btnReset" />
-                </td>
-                </tbody>
-                <tfoot>
-                </tfoot>
-            </table>*@
+        @*@using (Html.BeginForm())
+            {
+                <table align="center" class="LoginCss">
+                    <thead>
+                        <tr>
+                            <td colspan="2"> Login</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>@Html.LabelFor(u => u.Username, "Username:")</td>
+                            <td>@Html.TextBoxFor(u => u.Username, new { required = "required" })</td>
+                        </tr>
+                        <tr>
+                            <td>@Html.LabelFor(u => u.Password, "Passwort:")</td>
+                            <td>@Html.TextBoxFor(u => u.Password, new { required = "required" })</td>
+                        </tr>
+                    <td colspan="2" , style="text-align: center">
+                        <input type="submit" value="absenden" id="btnSubmit" />
+                        <input type="reset" value="abbrechen" id="btnReset" />
+                    </td>
+                    </tbody>
+                    <tfoot>
+                    </tfoot>
+                </table>*@
 
-    }
+        }
 
 </body>
