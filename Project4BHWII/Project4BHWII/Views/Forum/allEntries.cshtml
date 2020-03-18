@@ -9,19 +9,20 @@
 
 @if (Model != null && Model.Count > 0)
 {
-    <table>
-        <thead>
-            <tr>
-                <td>Username</td>
-                <td>Titel</td>
-                <td>Entry</td>
-                <td>UploadFile</td>
-                <td>Type</td>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (Entry u in Model)
-            {
+    foreach (Entry u in Model)
+    {
+        <table class="post">
+            <thead>
+                <tr>
+                    <td>Username</td>
+                    <td>Titel</td>
+                    <td>Entry</td>
+                    <td>UploadFile</td>
+                    <td>Type</td>
+                </tr>
+            </thead>
+            <tbody>
+
                 <tr>
                     <td>@u.UserName</td>
                     <td>@u.Titel</td>
@@ -41,14 +42,15 @@
                     </td>
                     <td>update</td>
                 </tr>
-            }
-        </tbody>
-        <tfoot>
-            <tr colspan="8"></tr>
-        </tfoot>
-    </table>
+         
+            </tbody>
+            <tfoot>
+                <tr colspan="8"></tr>
+            </tfoot>
+        </table>
+    }
 }
 else
 {
-    <p>Es existieren keine Posts</p>
+< p > Es existieren keine Posts </ p >
 }

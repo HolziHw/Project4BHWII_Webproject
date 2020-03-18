@@ -26,5 +26,15 @@ namespace Project4BHWII.Controllers
             return View();
         }
 
+        public ActionResult Delete(int id)
+        {
+            rep = new RepEntryDB();
+            rep.Open();
+            rep.Delete(id);
+            rep.Close();
+            return RedirectToAction("Index");
+            
+        }
+
     }
 }

@@ -76,10 +76,10 @@ namespace Project4BHWII.Models.Database
         public bool Delete(int id)
         {
             DbCommand cmdDelete = _connection.CreateCommand();
-            cmdDelete.CommandText = "DELETE from entries where id = @EntryId";
+            cmdDelete.CommandText = "DELETE from entries where id = @id";
 
             DbParameter paramId = cmdDelete.CreateParameter();
-            paramId.ParameterName = "EntryId";
+            paramId.ParameterName = "id";
             paramId.Value = id;
             paramId.DbType = DbType.Int32;
 
@@ -126,7 +126,7 @@ namespace Project4BHWII.Models.Database
         {
             List<Entry> entries = new List<Entry>();
             DbCommand cmdAllEntries = _connection.CreateCommand();
-            cmdAllEntries.CommandText = "select id_name,titel,entryText,uploadData,EntryTyp from entries; ";
+            cmdAllEntries.CommandText = "select * from entries; ";
 
             using(DbDataReader reader = cmdAllEntries.ExecuteReader())
             {
@@ -135,11 +135,12 @@ namespace Project4BHWII.Models.Database
                     entries.Add(
                         new Entry
                         {
-                            UserName = Convert.ToString(reader[0]),
-                            Titel = Convert.ToString(reader[1]),
-                            EntryText = Convert.ToString(reader[2]),
-                            UploadDataURL = Convert.ToString(reader[3]),
-                            EntryType = (EntryType)Convert.ToInt32(reader[4])
+                            Id = Convert.ToInt32(reader["id"]),
+                            UserName = Convert.ToString(reader["id_name"]),
+                            Titel = Convert.ToString(reader["titel"]),
+                            EntryText = Convert.ToString(reader["entryText"]),
+                            UploadDataURL = Convert.ToString(reader["uploadData"]),
+                            EntryType = (EntryType)Convert.ToInt32(reader["EntryTyp"])
                         });
                 }
             }

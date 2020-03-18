@@ -4,8 +4,8 @@
     document.getElementById("HeaderPic").style.backgroundImage = "url('../../Media/Pictures/Eu4banner_2.jfif')";
 </script>
 
+@model List<Project4BHWII.Models.Entry>
 @using Project4BHWII.Models
-
 
 @{
     ViewBag.Title = "Home Page";
@@ -15,49 +15,54 @@
 
 <a href='@Url.Action("newEntry", "Forum")' class="btn btn-primary">neuer Post</a>
 
-<h2 class="justify-content-center">All Posts</h2>
+<h2>Alle Postes das Forums</h2>
 
-@{
-    if (Model != null && Model.Count > 0)
+    @if (Model != null && Model.Count > 0)
     {
-
         foreach (Entry u in Model)
         {
-    <table class="ForumsEintrag">
-        <thead>
-        <td>Name</td>
-        <td>Titel</td>
-        <td>Text</td>
-        <td>URL</td>
-        <td>EntryType</td>
-        </thead>
-        <tbody>
+            <table class="post">
+                <thead class="post">
+                    <tr>
+                        <td>Id</td>
+                        <td>Username</td>
+                        <td>Titel</td>
+                        <td>Entry</td>
+                        <td>UploadFile</td>
+                        <td>Type</td>
+                    </tr>
+                </thead>
+                <tbody class="post">
 
-        <td>@u.UserName</td>
-        <td>@u.Titel</td>
-        <td>@u.EntryText</td>
-        @{
-            if (u.UploadDataURL != null)
-            {
-                <td>@u.UploadDataURL</td>
-            }
-            else
-            {
-                <td>Es ist kein Savegame vorhanden</td>
-            }
-            <td>@u.EntryType</td>
-        }
-        
-        </tbody>
-        <tfoot>
-            <tr colspan="8"></tr>
-        </tfoot>
-    </table>
+                    <tr>
+                        <td>@u.Id</td>
+                        <td>@u.UserName</td>
+                        <td>@u.Titel</td>
+                        <td>@u.EntryText</td>
+                        <td>@u.UploadDataURL</td>
+                        <td>@u.EntryType</td>
+                        <td>
+                            <!--
+                                Formular für den Löschen-button erzeugen
+                                methode = "post" ...    Formulardaten werden nicht in der Adressleiste angezeigt
+                                action ... wohin das Formular gesendet wird (AdminController und dort in der delete Methode)
+                                es wird ein Parameter mit dem Namen id übermittelt
+                            -->
+                            <form method="post" action="/Home/delete/@u.Id">
+                                <input type="submit" value="löschen" />
+                            </form>
+                        </td>
+                        <td>update</td>
+                    </tr>
+
+                </tbody>
+                <tfoot class="post">
+                    <tr colspan="8"></tr>
+                </tfoot>
+            </table>
         }
     }
     else
     {
-        < p > Es existriert kein Post </ p >
-
+        <p> Es existieren keine Posts </p>
     }
-}

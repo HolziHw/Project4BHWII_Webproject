@@ -86,49 +86,52 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" @Html.TextBoxFor(u => u.Firstname, new { required = "required", placeholder = "Vorname" })>
+                            <input type="text" class="form-control" @Html.TextBoxFor(u => u.Firstname, new { required = "required", placeholder = "Vorname" })
                         </div>
 
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" @Html.TextBoxFor(u => u.Lastname, new { required = "required", placeholder = "Nachname" })>
+                            <input type="text" class="form-control" @Html.TextBoxFor(u => u.Lastname, new { required = "required", placeholder = "Nachname" })
+                        </div>
+
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                <div class="form-control">
+                                    @Html.DropDownListFor(u => u.Gender, new SelectList(Enum.GetValues(typeof(Gender))), "Geschlecht auswählen")
+                                </div>
+                            </div>
+                            
                         </div>
 
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="" class="form-control" @Html.EnumDropDownListFor(u => u.Gender, new { required = "required", placeholder = "Gender" })>
-                        </div>
-
-                        <div class="input-group form-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
-                            </div>
-                            <input type="date" class="form-control" @Html.TextBoxFor(u => u.Birthdate, new { type = "date", placeholder = "Birthdate" })>
+                            <input type="date" class="form-control" @Html.TextBoxFor(u => u.Birthdate, new { type = "date", placeholder = "Birthdate" })
                         </div>
 
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control"@Html.TextBoxFor(u => u.Username, new { required = "required", placeholder = "Username" })>
+                            <input type="text" class="form-control"@Html.TextBoxFor(u => u.Username, new { required = "required", placeholder = "Username" })
                         </div>
 
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="password" class="form-control"@Html.PasswordFor(u => u.Password, new { required = "required", placeholder = "Password" })>
+                            <input type="password" class="form-control"@Html.PasswordFor(u => u.Password, new { required = "required", placeholder = "Password" })
                         </div>
 
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="password" class="form-control"@Html.PasswordFor(u => u.Password2, new { required = "required", placeholder = "Password wiederholen!" })>
+                            <input type="password" class="form-control"@Html.PasswordFor(u => u.Password2, new { required = "required", placeholder = "Password wiederholen!" })
                         </div>
 
                         <div class="form-group">
