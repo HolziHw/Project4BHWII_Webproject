@@ -24,7 +24,9 @@ create table entries(
     constraint id_PK primary key(id)
     );
 
-	insert into users values (0,"Guest","Guest",0,2000-10-10,"Guest",sha2("1unsicheresGuestPW!",512));
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8aafeedda877e1ce86e59aa40595c824be3b478c
 select * from entries;
