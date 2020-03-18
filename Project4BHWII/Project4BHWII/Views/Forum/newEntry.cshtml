@@ -5,6 +5,22 @@
     document.getElementById("HeaderPic").style.backgroundImage = "url('../../Media/Pictures/Hoi4Banner.png')";
 </script>
 
+<script>
+    function allowDrop(ev) {
+        ev.preventDefault();
+    }
+
+    function drag(ev) {
+        ev.dataTransfer.setData("text", ev.target.id);
+    }
+
+    function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData("text");
+        ev.target.appendChild(document.getElementById(data));
+    }
+</script>
+
 @model  Project4BHWII.Models.Entry
 @using Project4BHWII.Models
 @{
@@ -20,9 +36,9 @@
     </thead>
     <tbody>
         <tr>
-        <td>
-            Username:
-        </td>
+            <td>
+                Username:
+            </td>
             @{
                 User user = Session["loggedinUser"] as User;
                 if (user != null)
@@ -46,10 +62,15 @@
         <tr>
             <td colspan="2">@Html.TextAreaFor(u => u.EntryText, new { required = "required" })</td>
         </tr>
-        <td colspan="2" , style="text-align: center">
-            <input type="submit" value="Posten" id="btnSubmit" class="btn bg-secondary"/>
-            <a href="@Url.Action("Index", "Home")" class="btn bg-secondary">abbrechen</a>
-        </td>
-    </tbody>
+
+        <!--<tr>
+            <td>URL</td>
+        <td colspan="2">@Html.TextBoxFor(u => u.UploadDataURL, new { required="required", ondrop="drop(event)" ,ondragover="allowDrop(event)" })</td>
+    </tr>-->
+<td colspan="2" , style="text-align: center">
+                <input type="submit" value="Posten" id="btnSubmit" class="btn bg-secondary" />
+                <a href="@Url.Action("Index", "Home")" class="btn bg-secondary">abbrechen</a>
+            </td>
+</tbody>
 </table>
 }
