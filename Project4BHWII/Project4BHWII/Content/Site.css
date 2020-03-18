@@ -186,8 +186,8 @@ h1, h2, h3, h4, h5, h6, p {
 }
 
 .gallerycontainer {
-    position: relative;
-    margin-left: 20%;
+    position: absolute;
+    margin-left: 10%;
     margin-right: auto;
     /*Add a height attribute and set to largest image's height to prevent overlaying*/
 }
@@ -224,7 +224,7 @@ h1, h2, h3, h4, h5, h6, p {
 .thumbnail:hover span { /*CSS for enlarged image*/
     visibility: visible;
     top: 0;
-    left: 350px; /*position where enlarged image should offset horizontally */
+    left: 450px; /*position where enlarged image should offset horizontally */
     z-index: 50;
 }
 
