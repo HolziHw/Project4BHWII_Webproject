@@ -29,8 +29,8 @@ namespace Project4BHWII.Controllers
             rep.Close();
             if (userFromDB == null) //Username und PW stimmen nicht
             {
-                ModelState.AddModelError("Username", "Benutzername oder Passswort stimmen nicht überein");
-                return View(UserDaten);
+                ModelState.AddModelError("Username", "Benutzername oder Passswort stimmen nicht");
+                return View();
             }
             else
             {

@@ -76,7 +76,7 @@ namespace Project4BHWII.Models.Database
                             Gender = (Gender)Convert.ToInt32(reader["gender"]),
                             Birthdate = Convert.ToDateTime(reader["birthdate"]),
                             Username = Convert.ToString(reader["username"]),
-                            Password = ""
+                            Password = Convert.ToString(reader["password"])
                         });
                 }
             }

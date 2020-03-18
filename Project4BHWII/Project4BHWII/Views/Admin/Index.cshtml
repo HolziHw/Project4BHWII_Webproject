@@ -1,0 +1,42 @@
+﻿@using Project4BHWII.Models
+
+<h2 class="text-md-center">All Posts</h2>
+@{
+    if (Model != null && Model.Count > 0)
+    {
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Firstname</td>
+                <td>Lastname</td>
+                <td>Gender</td>
+                <td>Birthdate</td>
+                <td>Username</td>
+                <td>Password</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (User u in Model)
+            {
+                <tr>
+                    <td>@u.Id</td>
+                    <td>@u.Firstname</td>
+                    <td>@u.Lastname</td>
+                    <td>@u.Gender</td>
+                    <td>@u.Birthdate.Value.ToLongDateString()</td>
+                    <td>@u.Username</td>
+                    <td>@u.Password2</td>
+                </tr>
+
+            }
+        </tbody>
+        </table>
+        }
+        else
+        {
+         <p> Es existriert kein Post </p>
+        }
+    }
+
+

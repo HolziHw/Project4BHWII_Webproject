@@ -15,49 +15,44 @@
 
 <a href='@Url.Action("newEntry", "Forum")' class="btn btn-primary">neuer Post</a>
 
-<h2 class="justify-content-center">All Posts</h2>
-
-@{
-    if (Model != null && Model.Count > 0)
-    {
-
-        foreach (Entry u in Model)
+<h2 class="text-md-center">All Posts</h2>
+    @{
+        if (Model != null && Model.Count > 0)
         {
-    <table class="ForumsEintrag">
-        <thead>
-        <td>Name</td>
-        <td>Titel</td>
-        <td>Text</td>
-        <td>URL</td>
-        <td>EntryType</td>
-        </thead>
-        <tbody>
 
-        <td>@u.UserName</td>
-        <td>@u.Titel</td>
-        <td>@u.EntryText</td>
-        @{
-            if (u.UploadDataURL != null)
+            foreach (Entry u in Model)
             {
-                <td>@u.UploadDataURL</td>
-            }
-            else
-            {
-                <td>Es ist kein Savegame vorhanden</td>
-            }
-            <td>@u.EntryType</td>
-        }
         
-        </tbody>
-        <tfoot>
-            <tr colspan="8"></tr>
-        </tfoot>
-    </table>
+            <table class="ForumsEintrag"  style="background-color: #ffffff">
+                <thead>
+                <td class="ForumsTitel">Titel</td>
+                <td class="ForumsTitel">@u.Titel</td>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Autor</td>
+                        <td>@u.UserName</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">@u.EntryText</td>
+                    </tr>
+                    <tr>
+                        @if (!String.IsNullOrEmpty(u.UploadDataURL.Trim()))
+                        {
+                            <td colspan="2">@u.UploadDataURL</td>
+                        }
+                        else
+                        {
+                            <td colspan="2">Es ist kein Savegame vorhanden</td>
+                        }
+                    </tr>
+                </tbody>
+            </table>
+            }
+        }
+        else
+        {
+            < p > Es existriert kein Post </ p >
+
         }
     }
-    else
-    {
-        < p > Es existriert kein Post </ p >
-
-    }
-}

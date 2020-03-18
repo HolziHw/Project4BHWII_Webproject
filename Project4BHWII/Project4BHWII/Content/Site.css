@@ -243,6 +243,13 @@ table.LoginCss {
 
 /*Ab hier Beginnt die CSS der Forumsseite !*/
 
-.ForumsEintrag{
-    margin: 20px;
+.ForumsEintrag {
+    text-align: center;
+    margin: 20px auto 20px auto;
+    background-color: white;
+}
+
+.ForumsTitel {
+}
+#PostBackgroundWhite {
 }
