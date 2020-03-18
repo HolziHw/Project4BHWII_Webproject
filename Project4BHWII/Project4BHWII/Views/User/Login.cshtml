@@ -33,14 +33,14 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-user"></i></span>
                             </div>
-                            <input type="text" class="form-control" @Html.TextBoxFor(u => u.Username, new { required = "required", placeholder="username"})>
+                            <input type="text" class="form-control" @Html.TextBoxFor(u => u.Username, new { required = "required", placeholder="username"})
 
                         </div>
                         <div class="input-group form-group">
                             <div class="input-group-prepend">
                                 <span class="input-group-text"><i class="fas fa-key"></i></span>
                             </div>
-                            <input type="password" class="form-control" @Html.TextBoxFor(u => u.Password, new { required = "required", placeholder="password" }) >
+                            <input type="password" class="form-control" @Html.TextBoxFor(u => u.Password, new { required = "required", placeholder="password" })
                         </div>
                         <div class="form-group">
                             <input type="submit" value="absenden" class="btn float-right login_btn" id="btnSubmit">
@@ -49,10 +49,10 @@
                 </div>
                 <div class="card-footer">
                     <div class="d-flex justify-content-center links">
-                        Don't have an account?<a href="/User/Registration#">Sign Up</a>
+                        Don't have an account?<a href="/User/Registration">Sign Up</a>
                     </div>
                     <div class="d-flex justify-content-center">
-                        <a href="#">Forgot your password?</a>
+                        <a href="/User/PWReset">Forgot your password?</a>
                     </div>
                 </div>
             </div>

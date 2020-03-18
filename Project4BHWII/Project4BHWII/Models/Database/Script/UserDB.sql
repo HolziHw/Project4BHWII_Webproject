@@ -26,5 +26,8 @@ create table entries(
     constraint id_PK primary key(id)
     );
 
+select * from users;
 
-select * from entries;
+update users
+set password = sha2("Hallo", 512)
+where id = 0;

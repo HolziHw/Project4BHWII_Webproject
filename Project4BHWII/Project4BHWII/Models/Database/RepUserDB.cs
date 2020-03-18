@@ -261,5 +261,61 @@ namespace Project4BHWII.Models.Database
                 };
             }
         }
+
+        public bool PWReset(int id, string newPW)
+        {
+            DbCommand cmdPWReset = _connection.CreateCommand();
+            cmdPWReset.CommandText = "UPDATE users SET password =sha2(@password, 512) where id=@id";
+
+            DbParameter paramId = cmdPWReset.CreateParameter();
+            paramId.ParameterName = "id";
+            paramId.Value = id;
+            paramId.DbType = DbType.Int32;
+
+            DbParameter paramNewPW = cmdPWReset.CreateParameter();
+            paramNewPW.ParameterName = "password";
+            paramNewPW.Value = newPW;
+            paramNewPW.DbType = DbType.String;
+
+            cmdPWReset.Parameters.Add(paramId);
+            cmdPWReset.Parameters.Add(paramNewPW);
+
+            return cmdPWReset.ExecuteNonQuery() == 1;
+        }
+
+        public User GetUserByUsername(string username)
+        {
+            DbCommand cmdUsernameFind = _connection.CreateCommand();
+            cmdUsernameFind.CommandText = "Select * from users where username = @username";
+
+            DbParameter paramUsername = cmdUsernameFind.CreateParameter();
+            paramUsername.ParameterName = "username";
+            paramUsername.Value = username;
+            paramUsername.DbType = DbType.String;
+
+            cmdUsernameFind.Parameters.Add(paramUsername);
+
+            
+            using (DbDataReader reader = cmdUsernameFind.ExecuteReader())
+            {
+                if(!reader.HasRows)
+                {
+                    return null;
+                }
+                else
+                {
+                    reader.Read();
+                    return new User{ 
+                        Id = Convert.ToInt32(reader["id"]),
+                        Firstname = Convert.ToString(reader["firstname"]),
+                        Lastname = Convert.ToString(reader["lastname"]),
+                        Gender = (Gender)Convert.ToInt32(reader["gender"]),
+                        Birthdate = Convert.ToDateTime(reader["birthdate"]),
+                        Username = Convert.ToString(reader["username"]),
+                        Password = ""
+                    };
+                }
+            }
+        }
     }
 }

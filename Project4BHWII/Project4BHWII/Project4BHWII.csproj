@@ -337,6 +337,7 @@
     <Content Include="Views\Forum\newEntry.cshtml" />
     <Content Include="Views\Shared\Message.cshtml" />
     <Content Include="Views\Forum\allEntries.cshtml" />
+    <Content Include="Views\User\PWReset.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

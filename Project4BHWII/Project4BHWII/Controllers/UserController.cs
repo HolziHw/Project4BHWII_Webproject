@@ -43,7 +43,9 @@ namespace Project4BHWII.Controllers
         public ActionResult Registration()
         {
             return View();
-        }[HttpPost]
+        }
+        
+        [HttpPost]
 
         public ActionResult Registration(User userFromForm)
         {
@@ -70,7 +72,39 @@ namespace Project4BHWII.Controllers
             }
            
             return View();
-        }[HttpGet]
+        }
+
+        [HttpGet]
+        public ActionResult PWReset()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult PWReset(string Username, string newPW)
+        {
+            rep = new RepUserDB();
+            User UserToFind = new User();
+            
+            if (!CheckPassword(newPW))
+            {
+                ModelState.AddModelError("Password", "Password muss mind. 8 Zeichen lang sein, mind. 1 Kleinbuchstaben und 1 Großbuchstaben und ein Sonderzeichen enthalten");
+            }
+            if (ModelState.IsValid)
+            {
+                rep.Open();
+                UserToFind = rep.GetUserByUsername(Username);
+                rep.PWReset(UserToFind.Id, newPW);
+                rep.Close();
+                return RedirectToAction("index", "home");
+            }else
+            {
+                return View(Username);
+            }
+        }
+
+
+
 
         public void CheckUserData(User user)
         {
