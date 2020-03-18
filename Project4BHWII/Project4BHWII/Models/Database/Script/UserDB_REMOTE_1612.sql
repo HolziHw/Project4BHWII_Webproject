@@ -24,8 +24,9 @@ create table entries(
     constraint id_PK primary key(id)
     );
 
-select * from users;
 
-update users
-set password = sha2("Hallo", 512)
-where id = 0;
+<<<<<<< HEAD
+
+=======
+>>>>>>> 8aafeedda877e1ce86e59aa40595c824be3b478c
+select * from entries;

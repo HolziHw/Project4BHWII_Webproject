@@ -14,6 +14,8 @@ create table users(
     constraint id_PK primary key(id)
 )engine=InnoDB;
 
+drop table entries;
+
 create table entries(
 	id int not null auto_increment,
     id_name varchar(180) not null,
@@ -24,8 +26,5 @@ create table entries(
     constraint id_PK primary key(id)
     );
 
-select * from users;
 
-update users
-set password = sha2("Hallo", 512)
-where id = 0;
+select * from entries;

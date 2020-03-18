@@ -11,7 +11,7 @@ namespace Project4BHWII.Models.Database
 {
     public class RepEntryDB : IRepEntry
     {
-        private string _connectionString = "Server=localhost;Database=WebProjekt;Uid=root;Pwd=Sammiegsg9;";
+        private string _connectionString = "Server=localhost;Database=WebProjekt;Uid=root;Pwd=Chrisi11+1201;";
         private MySqlConnection _connection = null;
 
         public void Open()
